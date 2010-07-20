@@ -1,10 +1,13 @@
 body { padding:0px; margin: 0px; font-size: 12px;}
 
 body {
-    max-height: 400px;
+    max-height: 800px;
 }
 
 ul { list-style: none;}
+
+
+
 li,ul { margin:0px; padding:0px; }
 
 div.wrapper {
@@ -18,6 +21,7 @@ div.wrapper {
 
 ul#tracks_container {    
 }
+
 
 ul#tracks_container li {
     padding: 3px;
@@ -34,6 +38,7 @@ ul#tracks_container li.empty {
     text-align: center;
     color: #696969;
 }
+
 
 ul#tracks_container li span.number {
     color: #696969;
@@ -74,9 +79,24 @@ ul#tracks_container li a.sm2_button {
     margin-bottom: 3px;
 }
 
+/*patch #1: added container for home screen*/
+#home {
+    height: 28px;
+    padding-left: 3px;
+    padding-top: 9px;
+    background:-webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.0, rgb(0,200,255)),
+        color-stop(1, rgb(20,100,150))
+    )
+}
+/*/p*/
+
 #controls {
-    height: 70px;
-    padding-left: 2px;
+    height: 68px;
+    padding-left: 3px;
     background:-webkit-gradient(
         linear,
         left bottom,
@@ -90,8 +110,9 @@ a#play {
     cursor: pointer;
 }
 
-#next img, #previous img {margin-bottom: 13px;}
+#next img, #previous img {margin-bottom: 3px;}
 
+/*patch #3: changed color*/
 #progress_bar {
     height: 3px;
     background:rgb(216,216,216);
@@ -101,11 +122,13 @@ a#play {
 }
 
 #progress {
-    height: 5px;
-    background-color:#cc3333;
+    height: 6px;
+    background-color:rgb(0,200,255);
     width: 0%;
     cursor: pointer;
 }
+/*/p*/
+
 
 #controls .album_image {
     width: 64px;
@@ -117,21 +140,43 @@ a#play {
 
 .float { float:left; }
 
-#play {
-    border: 1px solid #ccc;
-    height: 62px;
-    width: 62px;
+#pause {
+    height: 16px;
+    width: 16px;
     display: block;
     text-align: center;
     position: absolute;
-    top: 0px;
-    left:0px;
+    bottom: 2px;
+    right:1px;
+}
+
+#pause img{
+    margin-left: 0px;
+    margin-top: 0px;
+    opacity: 0.9;
+
+    -webkit-transition-property: hover;
+    -webkit-transition: opacity 0.15s ease-in-out;
+}
+
+#pause:hover img { opacity: 1; }
+
+
+
+#play {
+    height: 16px;
+    width: 16px;
+    display: block;
+    text-align: center;
+    position: absolute;
+    top: 2px;
+    right:1px;
 }
 
 #play img{
-    margin-left: 5px;
-    margin-top: 7px;
-    opacity: 0.8;
+    margin-left: 0px;
+    margin-top: 0px;
+    opacity: 0.9;
 
     -webkit-transition-property: hover;
     -webkit-transition: opacity 0.15s ease-in-out;
@@ -154,15 +199,17 @@ a#play {
 
 #controls .track_info a:hover { color: #0187C5; text-decoration:underline;}
 
+/*patch #2: changed font-size from 23 to 18*/
 #controls .track_info .track {
     font-family: Verdana;
-    font-size: 23px;
-    line-height: 30px;
+    font-size: 17px;
+    line-height: 24px;
     text-overflow: ellipsis;
     display:block;
     width: 280px;
     overflow: hidden;
 }
+/*/p*/
 
 #controls .track_info .container {
     width: 306px;
@@ -196,7 +243,7 @@ a#play {
 }
 
 #controls .track_info .controls_container a.love, #controls .track_info .controls_container a.ban {
-    margin-top: 3px;
+    margin-top: 8px;
 }
 
 #controls .track_info .controls_container a:hover {
@@ -205,6 +252,7 @@ a#play {
 
 #controls .track_info .controls_container a.next {
     margin-right: 20px;
+    margin-top: 3px;
 }
 
 .volume_control {
